@@ -1,8 +1,6 @@
-@InProceedings{Gong_2023_ICCV,
-    author    = {Gong, Kehong and Lian, Dongze and Chang, Heng and Guo, Chuan and Jiang, Zihang and Zuo, Xinxin and Mi, Michael Bi and Wang, Xinchao},
-    title     = {TM2D: Bimodality Driven 3D Dance Generation via Music-Text Integration},
-    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    month     = {October},
-    year      = {2023},
-    pages     = {9942-9952}
+@article{gong2023tm2d,
+  title={TM2D: Bimodality Driven 3D Dance Generation via Music-Text Integration},
+  author={Gong, Kehong and Lian, Dongze and Chang, Heng and Guo, Chuan and Zuo, Xinxin and Jiang, Zihang and Wang, Xinchao},
+  journal={arXiv preprint arXiv:2304.02419},
+  year={2023}
 }
