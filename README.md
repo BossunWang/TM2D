@@ -17,6 +17,9 @@ pip install -r requirements.txt
 
 ## Download Data & Pre-trained Models
 
+### code (temporarily) 
+download the code from zip file github_update.zip in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing) 
+
 ### Datasets
 Create a dataset folder to place pre-traine models:
 ```sh
@@ -30,8 +33,6 @@ Create a checkpoint folder to place pre-traine models:
 mkdir ./checkpoints
 ```
 download the checkpoint dataset from [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
-
-download the code from zip file github_update.zip in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing) (temporarily) 
 
 Once finished, the file directory should look like this:  
   ```
