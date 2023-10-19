@@ -31,7 +31,7 @@ mkdir ./checkpoints
 ```
 download the checkpoint dataset from [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
 
-[temporarily] download the code from zip file github_update.zip in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
+download the code from zip file github_update.zip in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing) (temporarily) 
 
 Once finished, the file directory should look like this:  
   ```
