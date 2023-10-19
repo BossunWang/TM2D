@@ -17,8 +17,8 @@ pip install -r requirements.txt
 
 ## Download Data & Pre-trained Models
 
-### code (temporarily) 
-download the code from zip file github_update.zip in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing) 
+### Code (temporarily) 
+download the code from zip file __github_update.zip__ in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing) 
 
 ### Datasets
 Create a dataset folder to place pre-traine models:
