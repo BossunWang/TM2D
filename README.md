@@ -31,6 +31,8 @@ mkdir ./checkpoints
 ```
 download the checkpoint dataset from [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
 
+[temporarily] download the code from zip file github_update.zip in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
+
 Once finished, the file directory should look like this:  
   ```
   ./Bailando/                     # this folder contain only the mp3, please follow the original git for dataprocess.
