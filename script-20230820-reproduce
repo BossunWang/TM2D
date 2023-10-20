@@ -1,0 +1,34 @@
+#==================================================================================================================
+#======= music2dance ==============================================================================================
+#==================================================================================================================
+1108n:
+try VQVAEV3_aistppml3d_motion_1003_d3-E0310:
+train VQVAE:
+python train_vq_tokenizer_v3.py --gpu_id 1 --name VQVAEV3_aistppml3d_motion_1003_d3 --dataset_name aistppml3d --batch_size 512 --n_resblk 3 --n_down=3 --start_dis_epoch 300 --window_size 128 --save_every_e 2
+tokenize motion:
+python tokenize_script_dance.py --gpu_id 0 --name VQVAEV3_aistppml3d_motion_1003_d3 --dataset_name aistppml3d --which_vqvae E0310 --n_resblk 3 --n_down=3 --window_size 128
+train music2dance:
+python train_a2d_transformer_v5.py --gpu_id 0 --name A2Dv5_1108n4_lr1e-4 --dataset_name aistppml3d --which_vqvae E0310 --tokenizer_name VQVAEV3_aistppml3d_motion_1003_d3 --tokenizer_name_motion VQVAEV3_aistppml3d_motion_1003_d3_E0310 --proj_share_weight --n_enc_layers 6 --n_dec_layers 6 --d_model 512 --d_inner_hid 2048 --lambda_a2d 1 --save_every_e 3 --max_epoch 50 --lr 1e-4
+test performance every 3 epoch:
+python eval4bailando/evaluate_a2d.py --gpu_id 0 --name A2Dv5_1108n4_lr1e-4 --eval_mode metric --which_vqvae E0310 --dataset_name aistppml3d --ext atmv2-a2d --tokenizer_name VQVAEV3_aistppml3d_motion_1003_d3 --tokenizer_name_motion VQVAEV3_aistppml3d_motion_1003_d3_E0310 --proj_share_weight --n_enc_layers 6 --n_dec_layers 6 --n_down=3 --d_model 512 --d_inner_hid 2048 --num_results 50 --repeat_times 1 --sample --eval_start_e 3 --eval_end_e 50 --eval_every_e 3
+try vis result:
+python evaluate_atm_transformer_byatmv2_a2m_wild.py --name A2Dv5_1108n4_lr1e-4 --eval_mode vis --which_vqvae E0310 --which_epoch E0021 --slidwindow_overlap 1 --ext atmv2-a2d-wild-E0021-overlap1 --tokenizer_name VQVAEV3_aistppml3d_motion_1003_d3 --dataset_name aistppml3d --num_results 1 --repeat_times 1 --sample --text_file ./input.txt --t2m_v2 --proj_share_weight --n_enc_layers 6 --n_dec_layers 6 --n_down=3 --d_model 512 --d_inner_hid 2048  --tokenizer_name_motion VQVAEV3_aistppml3d_motion_1003_d3_E0310
+test performance on epoch 36:
+python eval4bailando/evaluate_music2dance_aistpp.py --gpu_id 0 --name A2Dv5_1108n4_lr1e-4 --eval_mode metric --which_vqvae E0310 --dataset_name aistppml3d --ext atmv2-a2d --tokenizer_name VQVAEV3_aistppml3d_motion_1003_d3 --tokenizer_name_motion VQVAEV3_aistppml3d_motion_1003_d3_E0310 --proj_share_weight --n_enc_layers 6 --n_dec_layers 6 --n_down=3 --d_model 512 --d_inner_hid 2048 --num_results 50 --repeat_times 1 --sample --eval_epoch 36
+
+
+
+
+#==================================================================================================================
+#============= ATM: ===============================================================================================
+#==================================================================================================================
+1103a:
+tokenize motion:
+python tokenize_script_dance.py --gpu_id 0 --name VQVAEV3_aistppml3d_motion_1003_d3 --dataset_name aistppml3d --which_vqvae E0190 --n_resblk 3 --n_down=3 --window_size 128
+train music2dance and text2motion together:
+python train_atm_transformer_v5.py --gpu_id 0 --name ATMv5_1028n2-REdcpu --dataset_name aistppml3d --which_vqvae E0190 --tokenizer_name VQVAEV3_aistppml3d_motion_1003_d3 --tokenizer_name_motion VQVAEV3_aistppml3d_motion_1003_d3_E0190 --proj_share_weight --n_enc_layers 4 --n_dec_layers 4 --d_model 512 --d_inner_hid 1024 --lambda_a2d 1e-1 --lambda_t2m 1 --save_every_e 5 --max_epoch 50 --lr 2e-4
+evaluate the mix music and text
+python evaluate_atm_transformer_byatmv5_lf3_withScoreV3.py --gpu_id 0 --name ATMv5_1028n2-REdcpu --eval_mode vis_all --which_vqvae E0190 --which_epoch E0020 --ext atmv5-lf3-1103a1-r1s-ws-E0020 --tokenizer_name VQVAEV3_aistppml3d_motion_1003_d3 --dataset_name aistppml3d --num_results 1 --repeat_times 1 --sample --text_file ./input.txt --proj_share_weight --n_enc_layers 4 --n_dec_layers 4  --n_down=3 --d_model 512 --d_inner_hid 1024 --tokenizer_name_motion VQVAEV3_aistppml3d_motion_1003_d3_E0190
+
+
+
