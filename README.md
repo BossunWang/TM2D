@@ -17,20 +17,32 @@ pip install -r requirements.txt
 
 ## Download Data & Pre-trained Models
 
+### Code (temporarily) 
+download the code from zip file __github_update.zip__ in [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing) 
+
 ### Datasets
 Create a dataset folder to place pre-traine models:
 ```sh
 mkdir ./dataset
 ```
-download the prepared dataset from [[google drive]](xxx)
+download the prepared dataset from [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
 
 ### Pre-trained Models
 Create a checkpoint folder to place pre-traine models:
 ```sh
 mkdir ./checkpoints
 ```
-download the checkpoint dataset from [[google drive]](xxx)
+download the checkpoint dataset from [[google drive]](https://drive.google.com/drive/folders/1gtIcMORHwEIM61bZi-gGbEZWVahrGzMq?usp=sharing)
 
+Once finished, the file directory should look like this:  
+  ```
+  ./Bailando/                     # this folder contain only the mp3, please follow the original git for dataprocess.
+  ./HumanML3D_24joint_60fps/      # this folder is for motion data preparation 
+  ./tm2d_60fps/checkpoints/       # download from google drive
+  ./tm2d_60fps/eval4bailando/     # download from google drive
+  ./tm2d_60fps/dataset/
+  ./tm2d_60fps/dataset/aistppml3d  ----> softlink to ./HumanML3D_24joint_60fps/aistppml3d
+  ```
 
 ## Training Models (music2dance)
 
